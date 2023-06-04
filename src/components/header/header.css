@@ -77,10 +77,40 @@
     outline: none;
  }
  .headerSearchText{
-    color:lightgray;
+    color:#aaa9a9;
     cursor: pointer;
  }
  .date{
    position: absolute; 
     top: 50px;
+ }
+ .options{
+    position:absolute;
+    top:50px;
+    background-color: white;
+    color: #aaa9a9;border-radius: 5px;
+    box-shadow: 12px 10px 7px -12px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 12px 10px 7px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: 12px 10px 7px -12px rgba(0,0,0,0.75);
+ }
+ .optionItem{
+    width: 200px;
+     display: flex;
+    justify-content: space-between;
+ }
+ .optionCounter{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: black;
+    font-size: 13px;
+ }
+ .optionCounterButton{
+    width: 30px;
+    height: 30px;
+    bottom: 1px solid rgb(5, 134, 173);;
+    color: rgb(5, 134, 173);
+    background-color: white;
+    cursor: pointer;
+
  }
