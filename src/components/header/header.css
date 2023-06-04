@@ -11,6 +11,11 @@
     max-width: 1024px;
     margin: 20px 0px 100px 0px;
 }
+.headerContainer.listMode{
+   width: 100%;
+   max-width: 1024px;
+   margin: 20px 0px 0px 0px;
+}
 .headerList{
     display: flex;
     gap: 40px;
@@ -97,20 +102,24 @@
     width: 200px;
      display: flex;
     justify-content: space-between;
+    margin:10px;
  }
  .optionCounter{
     display: flex;
     gap: 10px;
     align-items: center;
     color: black;
-    font-size: 13px;
+    font-size: 12px;
  }
  .optionCounterButton{
     width: 30px;
     height: 30px;
-    bottom: 1px solid rgb(5, 134, 173);;
+    border:1px solid rgb(5, 134, 173);;
     color: rgb(5, 134, 173);
     background-color: white;
     cursor: pointer;
 
+ }
+ .optionCounterButton:disabled{
+   cursor: not-allowed;
  }
