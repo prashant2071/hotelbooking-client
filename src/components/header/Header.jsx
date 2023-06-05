@@ -7,7 +7,9 @@ import {
   faCalendar,
   faCalendarDays,
   faCar,
+  faHome,
   faPerson,
+  faPlaceOfWorship,
   faPlane,
   faTaxi,
 } from "@fortawesome/free-solid-svg-icons";
@@ -15,8 +17,10 @@ import { Children, useState } from "react";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
+import moment from "moment";
 const Header = ({type}) => {
   const [openDate, setOpenDate] = useState(false);
+  const [openOptions, setOpenOptions] = useState(false);
   const [date, setDate] = useState([
     {
       startDate: new Date(),
@@ -24,14 +28,15 @@ const Header = ({type}) => {
       key: "selection",
     },
   ]);
-  const [openOptions, setOpenOptions] = useState(false);
+
   const [options, setOptions] = useState({
     adult: 1,
     children: 0,
     room: 1,
   });
+  
+
   const handleOption = (name, operation) => {
-    console.log("the data is ", name, "and", operation);
     setOptions((prev) => {
       return {
         ...prev,
@@ -45,7 +50,7 @@ const Header = ({type}) => {
       <div className={type==="list"?"headerContainer listMode":"headerContainer"}> 
         <div className="headerList">
           <div className="headerListItem active">
-            <FontAwesomeIcon icon={faBed} />
+            <FontAwesomeIcon icon={faHome} />
             <span>Stays</span>
           </div>
           <div className="headerListItem">
@@ -57,7 +62,7 @@ const Header = ({type}) => {
             <span>Car rentals</span>
           </div>
           <div className="headerListItem">
-            <FontAwesomeIcon icon={faBinoculars} />
+            <FontAwesomeIcon icon={faPlaceOfWorship} />
             <span>Attractions</span>
           </div>
           <div className="headerListItem">
@@ -86,8 +91,8 @@ const Header = ({type}) => {
             <span
               onClick={() => setOpenDate(!openDate)}
               className="headerSearchText"
-            >{`${format(date[0].startDate, "MM/dd/yyyy")} to 
-            ${format(date[0].endDate, "MM/dd/yyyy")}`}</span>
+            >{`${moment(date[0].startDate).format('dddd, MMMM D')} --
+            ${moment(date[0].endDate).format('dddd, MMMM D')}`}</span>
             {openDate && (
               <DateRange
                 editableDateInputs={true}
