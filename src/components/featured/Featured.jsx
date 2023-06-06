@@ -9,8 +9,10 @@ const Featured = () => {
           alt=""
           className="featuredImg"
         />
-        <h1>pokhara</h1>
-        <h2> lakeside area</h2>
+        <div className="featuredTitle">
+          <h1>pokhara</h1>
+          <h2> lakeside area</h2>
+        </div>
       </div>
       <div className="featuredItems">
         <img
@@ -18,8 +20,10 @@ const Featured = () => {
           alt=""
           className="featuredImg"
         />
-        <h1>kathmandu</h1>
-        <h2>bauddha area</h2>
+        <div className="featuredTitle">
+          <h1>kathmandu</h1>
+          <h2>bauddha area</h2>
+        </div>
       </div>
       <div className="featuredItems">
         <img
@@ -27,8 +31,10 @@ const Featured = () => {
           alt=""
           className="featuredImg"
         />
-        <h1>nagarkot</h1>
-        <h2>1221 property</h2>
+        <div className="featuredTitle">
+          <h1>nagarkot</h1>
+          <h2>1221 property</h2>
+        </div>
       </div>
     </div>
   );
