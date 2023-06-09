@@ -71,10 +71,9 @@ const Header = ({type}) => {
           </div>
         </div>
         {type!=="list"&&
-        <>  <h1 className="headerTitle">A lifetime of discount?</h1>
+        <>  <h1 className="headerTitle">Find your next stay</h1>
         <p className="headerDescription">
-          Get rewarded on the travel - unlock the instant saving of 10% or more
-          with hotel booking account
+        Search low prices on hotels, homes and much more...
         </p>
         <button className="headerBtn">Sign in / Register</button>
 <div className="headerSearch">
