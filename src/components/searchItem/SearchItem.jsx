@@ -1,8 +1,14 @@
-import './SearchItem.css'
+import './searchItem.css'
 
 const SearchItem = () => {
   return (
-    <div>SearchItem</div>
+    <div className='SearchItem'>
+        <img src="" alt="" className="siImg" />
+        <div className="siDesc">
+        
+        </div>
+        <div className="siDetails"></div>
+    </div>
   )
 }
 
