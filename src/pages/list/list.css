@@ -56,12 +56,14 @@ position: sticky;
   }
   .lsOptionItem>input{
     width: 50px;
+    padding: 3px;
   }
   .listSearch>button{
     padding: 10px;
-    background-color: #003580;
+    background-color: #2862b3;
     border: none;
     color: white;
+    width: 100%;
     font-weight: 500;
   }
 .listResult{
