@@ -1,0 +1,38 @@
+.searchItem{
+    border: 1px solid lightgray;
+    padding: 10px;
+    border-radius: 5px;
+    gap: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.siImg{
+    width: 200px;
+    height:200px;
+    object-fit: cover;
+}
+.siDesc{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 2;
+}
+.siTitle{
+ font-size: 20px;
+ color: #0071c2;
+}
+.siDistance{
+font-size: 12px;
+}
+.siTaxiOp{
+    font-size: 12px;
+    background-color: green;
+    color: white;
+    width: max-content;
+    padding: 3px;
+    border-radius: 5px;
+}
+.siDetails{
+    flex: 1;
+}
