@@ -43,6 +43,27 @@ position: sticky;
     align-items: center;
     cursor: pointer;
   }
+  .lsOptionItem{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: gray;
+    font-size: 12px;
+
+  }
+  .lsOptions{
+    padding: 10px;
+  }
+  .lsOptionItem>input{
+    width: 50px;
+  }
+  .listSearch>button{
+    padding: 10px;
+    background-color: #003580;
+    border: none;
+    color: white;
+    font-weight: 500;
+  }
 .listResult{
     flex: 3;
     }
