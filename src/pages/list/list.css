@@ -17,6 +17,7 @@ background-color: #FFB700;
 border-radius: 10px;
 padding: 10px;
 position: sticky;
+height: max-content;
 
 }
 
