@@ -2,9 +2,15 @@ import "./hotel.css";
 import Navbar from "./../../components/navbar/Navbar";
 import Header from "./../../components/header/Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faCircleArrowLeft, faCircleArrowRight, faCircleXmark, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import MailList from "../../components/mailList/MailList";
+import Footer from "../../components/footer/Footer";
+import { useState } from "react";
 
 const Hotel = () => {
+  const [slideNumber,setSlideNumber] = useState(0);
+  const [openSlider,setOpenSLider] = useState(false);
+
   const photos = [
     {
       src: "https://cf.bstatic.com/xdata/images/hotel/max1280x900/261707778.jpg?k=56ba0babbcbbfeb3d3e911728831dcbc390ed2cb16c51d88159f82bf751d04c6&o=&hp=1",
@@ -25,12 +31,36 @@ const Hotel = () => {
       src: "https://cf.bstatic.com/xdata/images/hotel/max1280x900/261707389.jpg?k=52156673f9eb6d5d99d3eed9386491a0465ce6f3b995f005ac71abc192dd5827&o=&hp=1",
     },
   ];
+  const handleOpen = (i) => {
+    setOpenSLider(true);
+    setSlideNumber(i)
+  }
+  const handleMove = (direction) =>{
+    let newSlideNumber;
+    if(direction==="l"){
+      newSlideNumber = slideNumber ===0?photos.length-1:slideNumber-1
+    }
+    else{
+      newSlideNumber = slideNumber ===photos.length-1?0:slideNumber+1
+    }
+    setSlideNumber(newSlideNumber);
+  }
   return (
     <div>
       <Navbar />
       <Header type="list" />
       <div className="hotelContainer">
-        <div  className="hotelWrapper">
+        {openSlider &&<div className="slider">
+        <FontAwesomeIcon className="close" icon={faCircleXmark} onClick={()=>setOpenSLider(false)}/>
+        <FontAwesomeIcon className="arrow left" icon={faCircleArrowLeft} onClick={()=>handleMove("l")} />
+        <div className="sliderWrapper">
+          <img src={photos[slideNumber].src} alt="" className="sliderImg"/>
+        </div>
+        <FontAwesomeIcon className="arrow right" icon={faCircleArrowRight} onClick={()=>handleMove("r")}/>
+
+        </div>}
+        <div className="hotelWrapper">
+          <button className="bookNow">Reserve or Book Now!</button>
           <h1 className="hotelTitle">Grand hotel</h1>
           <div className="hotelAddress">
             <FontAwesomeIcon icon={faLocationDot} />
@@ -43,15 +73,15 @@ const Hotel = () => {
             Book a stay over $114 at this property and get a free airpoat taxi
           </span>
           <div className="hotelImages">
-            {photos.map((item) => (
+            {photos.map((item,i) => (
               <div className="hotelImgWrapper">
-                <img src={item.src} className="hotelImg" />
+                <img onClick={()=>handleOpen(i)} src={item.src} className="hotelImg" />
               </div>
             ))}
           </div>
           <div className="hotelDetails">
             <div className="hotelDetailsText">
-            <h1 className="hotelTitle">Stay in the heart of City</h1>
+              <h1 className="hotelTitle">Stay in the heart of City</h1>
               <p className="hotelDesc">
                 Located a 5-minute walk from St. Florian's Gate in Krakow, Tower
                 Street Apartments has accommodations with air conditioning and
@@ -64,10 +94,10 @@ const Hotel = () => {
                 airport is John Paul II International Kraków–Balice, 16.1 km
                 from Tower Street Apartments, and the property offers a paid
                 airport shuttle service.
-                </p>
+              </p>
             </div>
-            <div className="hotelDetails">
-            <h1>Perfect for a 9-night stay!</h1>
+            <div className="hotelDetailsPrice">
+              <h1>Perfect for a 9-night stay!</h1>
               <span>
                 Located in the real heart of Krakow, this property has an
                 excellent location score of 9.8!
@@ -79,6 +109,8 @@ const Hotel = () => {
             </div>
           </div>
         </div>
+        <MailList/>
+        <Footer/>
       </div>
     </div>
   );
