@@ -1,6 +1,10 @@
+import useFetch from "../../hooks/useFetch";
 import "./featured.css";
 
 const Featured = () => {
+
+  const {data,loading,error} = useFetch("http://localhost:8081/api/hotel/countByCity?city=madrid,berlin,london");
+  console.log("the data is",data)
   return (
     <div className="featured">
       <div className="featuredItems">
